@@ -1,11 +1,10 @@
-public class Circle extends GeometricObject
+public abstract class Circle extends GeometricObject
 {
-	private double radius;
+	protected double radius;
 
 	// Default constructor
 	public Circle ()
 	{
-		
 		super();
 		radius = 1;
 
@@ -42,18 +41,16 @@ public class Circle extends GeometricObject
 	}
 
 	//Regner ut vekten
-	public double findWeight()
+	/*public double findWeight()
 	{
 		return super.getWeight() * Math.PI * radius * radius * getThickness();
-	}
+	}*/
 	//Inneholder data for sirkelen
 	public String toString()
 	{
-		return "Circle radius: " + radius + "m" +
-		"\nThickness: " + getThickness() + "m" +
-		"\nArea: " + findArea() + "m^3" +
-		"\nCircumference: " + findCircumference() + "m" +
-		"\nWeight: " + findWeight() + "kg"; 
+		return "The circle radius is: " + radius + "m" +
+		"\nThe thickness is: " + getThickness() + "m" +
+		"\nThe area is: " + findArea() + "m^2";
 	}
 
 }

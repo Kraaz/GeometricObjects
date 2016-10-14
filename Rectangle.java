@@ -1,14 +1,17 @@
-public class Rectangle extends GeometricObject
+public abstract class Rectangle extends GeometricObject
 {
-	private double length;
-	private double height;
+	protected double length;
+	protected double height;
 	public Rectangle ()
+
 	{
-		length	 = 1.0;
+		super();
+		length	 = 2.0;
 		height	 = 1.0;
 	}
-	public Rectangle(double l, double h)
+	public Rectangle(double t, double l, double h)
 	{
+		super(t);
 		length 	= l;
 		height 	= h;
 	}
@@ -17,6 +20,7 @@ public class Rectangle extends GeometricObject
 	{
 		return length;
 	}
+	
 	public double getHeight()
 	{
 		return height;
@@ -26,12 +30,29 @@ public class Rectangle extends GeometricObject
 	{
 		length = w;
 	}
+
 	public double findArea()
 	{
-		return length*height;
+		return length * height;
 	}
+
+	public double findVolume()
+	{
+		return length * height * getThickness();
+	}
+
 	public double findCircumference()
 	{
 		return 2*length+2*height;
 	}
+
+	public String toString()
+	{
+		return "Dimensions of rectangle: " + length + "m" + " x " + height + "m" + 
+		"\nArea is: " + findArea() + " m^3" +
+		"\nVolume is: " + findVolume() + " m^3" +
+		"\nCircumference: " + findCircumference() + "m";
+	}
+
+
 }

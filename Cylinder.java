@@ -1,24 +1,51 @@
 public class Cylinder extends Circle
 {
+	//private double radius;
 	private double height;
 
-	Cylinder()
+	//Default constructor
+	public Cylinder ()
 	{
-		super(1.0);
-		height = 1.0;
+		super();
+		height = 3;
+
 	}
-	Cylinder(double h, double r)
+	
+	//Constructor med parametre
+	public Cylinder (double t, double r, double h)
 	{
-		super(r);
+		super(t, r);
 		height = h;
+
 	}
 
+	public double getHeight()
+	{
+		return height;
+	}
+	
+	//Regner ut volum
 	public double findVolume()
 	{
-		return Math.PI * getRadius() * getRadius() * height;
+		return Math.PI * radius * radius * height;
 	}
-	/*public toString()
+		public double findInnerVolume()
 	{
+		return Math.PI * radius - thickness * radius - thickness * height - thickness;
+	}
+	public double findWeight()
+	{
+		return weight * (findVolume() - findInnerVolume());
+	}
 
-	}*/
+	//Regner ut vekten
+
+	//Inneholder data for 
+	public String toString()
+	{
+		return "The radius of the cylinder is: " + radius + "m" +
+		//"\nThe thickness is: " + getHeight() + "m" +
+		"\nThe volume is: " + findVolume() + "m" ;
+		//"\nWeight: " + findWeight() + "kg"; 
+	}
 }

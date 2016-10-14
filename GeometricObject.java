@@ -1,7 +1,7 @@
 public abstract class GeometricObject
 {
-	private double thickness;
-	private double weight = 7.8;
+	protected double thickness;
+	protected double weight = 7.8;
 	protected GeometricObject ()
 	{
 		thickness = 0.01;
@@ -21,7 +21,7 @@ public abstract class GeometricObject
 	}
 	public String toString()
 	{
-		return "Weight = " + weight; 
+		return "Weight: " + weight; 
 	}
 	public double getThickness()
 	{
@@ -32,13 +32,11 @@ public abstract class GeometricObject
 		thickness = t;
 	}
 
-
-
 	abstract double findArea();
 	abstract double findCircumference();
+	abstract double findWeight();
 
 	/*
-	
 	abstract double findSurfaceArea(); 
 	abstract double getHeight();
 	abstract double findVolume();
